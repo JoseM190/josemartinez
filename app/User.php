@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'surname', 'identify_card', 'email', 'password', 'birthdate', 'gender', 'cellular',
     ];
 
     /**
@@ -36,4 +36,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $table = 'users';
+    //relacion de uno a muchos
+    public function assistances(){
+        return $this->belongsTo('App\Assistance', 'id');
+    }
+    public function themes(){
+        return $this->belongsTo('App\Theme', 'id');
+    }
+    public function details(){
+        return $this->belongsTo('App\Detail', 'id');
+    }
+    public function exams(){
+        return $this->belongsTo('App\Exam', 'id');
+    }
 }

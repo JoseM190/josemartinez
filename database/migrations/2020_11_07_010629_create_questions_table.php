@@ -15,6 +15,10 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->foreign('id_themes')->references('id')->on('themes');
+            $table->string('number_question');
+            $table->string('question');
+            $table->string('answer');
             $table->timestamps();
         });
     }

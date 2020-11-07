@@ -15,6 +15,8 @@ class CreateAssistancesTable extends Migration
     {
         Schema::create('assistances', function (Blueprint $table) {
             $table->id();
+            $table->string('date_assistances');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

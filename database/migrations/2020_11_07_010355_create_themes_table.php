@@ -15,6 +15,9 @@ class CreateThemesTable extends Migration
     {
         Schema::create('themes', function (Blueprint $table) {
             $table->id();
+            $table->string('title_theme');
+            $table->foreign('id_teacher')->references('id')->on('users');
+            $table->foreign('id_subjects')->references('id')->on('subjects');
             $table->timestamps();
         });
     }
