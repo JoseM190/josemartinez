@@ -14,12 +14,13 @@ class CreateThemesTable extends Migration
     public function up()
     {
         Schema::create('themes', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('title_theme');
             $table->unsignedInteger('id_teacher');
-            $table->foreign('id_teacher')->references('id')->on('users');
+            $table->foreign('id_teacher')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedInteger('id_subjects');
-            $table->foreign('id_subjects')->references('id')->on('subjects');
+            $table->foreign('id_subjects')->references('id')->on('subjects')->onDelete('cascade');
             $table->timestamps();
         });
     }

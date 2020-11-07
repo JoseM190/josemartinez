@@ -14,9 +14,10 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('id_themes');
-            $table->foreign('id_themes')->references('id')->on('themes');
+            $table->foreign('id_themes')->references('id')->on('themes')->onDelete('cascade');
             $table->string('number_question');
             $table->string('question');
             $table->string('answer');
