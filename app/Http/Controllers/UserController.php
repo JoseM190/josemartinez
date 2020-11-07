@@ -8,7 +8,7 @@ class UserController extends Controller
 {
     public function config()
     {
-        return view('user.config');
+        return views('user.config');
     }
 
     public function update(Request $request)
