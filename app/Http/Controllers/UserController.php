@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function config()
-    {
-        return views('user.config');
+    public function userform(){
+        return view('user.userform');
     }
 
     public function update(Request $request)
@@ -19,12 +18,12 @@ class UserController extends Controller
         //validations rules
         $validate = $this->validate ($request, [
             'name' => 'required', 'string', 'max:255',
-            'surname' => ['required', 'string', 'max:255'],
-            'identify_card' => ['required', 'string', 'max:15'],
+            'surname' => 'required', 'string', 'max:255',
+            'identify_card' => 'required', 'string', 'max:15',
             'email' => 'required', 'string', 'email', 'max:255', 'unique:users,email,'.$id,
-            'birthdate' => ['required', 'string', 'max:12'],
-            'gender' => ['required', 'string', 'max:2'],
-            'cellular' => ['required', 'string', 'max:10'],
+            'birthdate' => 'required', 'string', 'max:12',
+            'gender' => 'required', 'string', 'max:2',
+            'cellular' => 'required', 'string', 'max:10'
             ]);
         //getting values
         $name=$request->input('name');
@@ -54,4 +53,3 @@ class UserController extends Controller
 
     }
 }
-
