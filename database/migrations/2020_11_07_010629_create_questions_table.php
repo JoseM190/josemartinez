@@ -18,7 +18,7 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('id_themes');
             $table->foreign('id_themes')->references('id')->on('themes')->onDelete('cascade');
-            $table->string('number_question');
+            $table->integer('number_question');
             $table->string('question');
             $table->string('answer');
             $table->timestamps();

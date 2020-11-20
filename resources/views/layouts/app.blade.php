@@ -50,8 +50,8 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="registrar" class="nav-link" href="#" role="button">
-                                    Registrar
+                                <a id="registrar" class="nav-link" href="{{ route('formuser') }}" role="button">
+                                    Register Student
                                 </a>
                             </li>
 
@@ -64,7 +64,7 @@
                                     <a class="dropdown-item" href="#">
                                        My Profile
                                     </a>
-                                    <a class="dropdown-item" href="/">
+                                    <a class="dropdown-item" href="#">
                                        Seetings
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
