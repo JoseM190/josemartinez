@@ -5,10 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+
                 <!--Mensaje flash-->
                 @if(session('estudianteGuardado'))
-                    <div class="alert alert-seccess">
-                        {{ session('estudianteGuardado')}}
+                    <div class="alert alert-success">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <i class="fa fa-check"></i> <strong>{{ session('estudianteGuardado')}}</strong>
                     </div>
                 @endif
 
@@ -147,7 +149,9 @@
                                 </button>
                             </div>
                         </div>
-                        <a href="/index">Go Back to Student Record</a>
+                        <a class="btn btn-link col-md-4" href="/index">
+                            <i class="fas fa-reply"></i> Go Back to Student Record
+                        </a>
                     </form>
                 </div>
             </div>

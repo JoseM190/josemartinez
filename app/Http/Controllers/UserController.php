@@ -8,7 +8,7 @@ use App\User;
 class UserController extends Controller
 {
     public function index(){
-        $data['users'] = User::paginate(5);
+        $data['users'] = User::paginate(2);
         return view('user.index', $data);
     }
 
@@ -33,5 +33,11 @@ class UserController extends Controller
         User::insert($userdata);
 
         return back()->with('estudianteGuardado','Registered Student');
+    }
+
+    //elimianr usuarios
+    public function delete($id){
+        User::destroy($id);
+        return back()->with('estudianteEliminado', 'Eliminated Student');
     }
 }

@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //rute de registro de estudiante
-Route::get('/index', 'UserController@index')->name('index');
-Route::get('/form', 'UserController@userform')->name('form');
-Route::post('/save', 'UserController@save')->name('save');
+Route::get('/index', 'UserController@index')->name('index'); //index de registro de estudiante
+Route::get('/form', 'UserController@userform')->name('form'); //crear registro de estudiante
+Route::post('/save', 'UserController@save')->name('save'); //guardar registro de estudiante
+Route::delete('/delete/{id}', 'UserController@delete')->name('delete'); // borrar estudiante

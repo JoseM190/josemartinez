@@ -6,7 +6,17 @@
         <div class="col-md-15">
             <div class="card">
                 <div class="card-header text-center">{{ __('Student Record') }}</div><br>
-                <a class="btn btn-success col-md-2 offset-md-1" href="/form">Add Student</a>
+                <a class="btn btn-success col-md-2 offset-md-1" href="/form">
+                    <i class="fas fa-user-plus"></i> Add Student
+                </a><br>
+
+                <!--Mensaje flash-->
+                @if(session('estudianteEliminado'))
+                    <div class="alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <i class="fa fa-times"></i> <strong>{{ session('estudianteEliminado')}}</strong>
+                    </div>
+                @endif
                 <div class="card-body">
                     <table class="table table-hover">
                         <thead>
@@ -20,6 +30,7 @@
                                 <th>Birthdate</th>
                                 <th>Gender</th>
                                 <th>Cellular</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,12 +45,22 @@
                                     <td>{{ $user->birthdate }}</td>
                                     <td>{{ $user->gender }}</td>
                                     <td>{{ $user->cellular }}</td>
+                                    <td>
+                                        <form action="{{ route('delete', $user->id) }}" method="POST">
+                                            @csrf @method('DELETE')
+                                            <button type="submit" onclick="return confirm('Are you sure to delete the student?');" class="btn btn-danger">
+                                                <i class="fas fa-user-minus"></i>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                     {{ $users->links() }}
-                    <a href="/home">Back to Top</a>
+                    <a class="btn btn-link col-md-2" href="/home">
+                        <i class="fas fa-reply"></i> Back to Top
+                    </a>
                 </div>
             </div>
         </div>
