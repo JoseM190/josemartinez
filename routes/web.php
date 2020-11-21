@@ -22,6 +22,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //rute de registro de estudiante
-Route::get('/index', 'UserController@index');
-Route::get('/form', 'UserController@userform');
+Route::get('/index', 'UserController@index')->name('index');
+Route::get('/form', 'UserController@userform')->name('form');
 Route::post('/save', 'UserController@save')->name('save');

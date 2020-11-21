@@ -7,6 +7,11 @@ use App\User;
 
 class UserController extends Controller
 {
+    public function index(){
+        $data['users'] = User::paginate(5);
+        return view('user.index', $data);
+    }
+
     //formulario de usuario
     public function userform(){
         return view('user.userform');

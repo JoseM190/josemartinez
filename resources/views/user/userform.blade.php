@@ -27,7 +27,7 @@
                 <div class="card-body">
                     <form action="{{ route('save') }}" method="POST">
                         @csrf
-                    
+
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-left">{{ __('Names:') }}</label>
 
@@ -146,7 +146,8 @@
                                     {{ __('Save') }}
                                 </button>
                             </div>
-                        </div>                        
+                        </div>
+                        <a href="/index">Go Back to Student Record</a>
                     </form>
                 </div>
             </div>
