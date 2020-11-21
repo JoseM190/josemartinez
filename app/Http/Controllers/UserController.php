@@ -7,17 +7,18 @@ use App\User;
 
 class UserController extends Controller
 {
+    //listar estudiantes
     public function index(){
         $data['users'] = User::paginate(2);
         return view('user.index', $data);
     }
 
-    //formulario de usuario
-    public function userform(){
-        return view('user.userform');
+    //formulario de crear estudiante
+    public function createU(){
+        return view('user.create');
     }
 
-    //guardar usuarios
+    //guardar estudiantes
     public function save(Request $request){
         $validator = $this->validate($request, [
             'name' => 'required|string|max:50',
@@ -35,9 +36,23 @@ class UserController extends Controller
         return back()->with('estudianteGuardado','Registered Student');
     }
 
-    //elimianr usuarios
+    //eliminar estudiante
     public function delete($id){
         User::destroy($id);
         return back()->with('estudianteEliminado', 'Eliminated Student');
+    }
+
+    //editar estudiante
+    public function edit($id){
+        $usuario = User::findOrFail($id);
+        return view('user.edit', compact('usuario'));
+    }
+
+    //edicion de estudiante
+    public function edition(Request $request, $id){
+        $datosUsuario = request()->except((['_token', '_method']));
+        User::where('id', '=', $id)->update($datosUsuario);
+
+        return back()->with('estudianteModificado', 'Successfully Modified Student');
     }
 }
