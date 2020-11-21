@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Names:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" placeholder="Ejemplo" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surnames:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
+                                <input id="surname" type="text" placeholder="Ejemplo2" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
 
                                 @error('surname')
                                     <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                             <label for="identify_card" class="col-md-4 col-form-label text-md-right">{{ __('C. I.:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="identify_card" type="number" class="form-control @error('identify_card') is-invalid @enderror" name="identify_card" value="{{ old('identify_card') }}" required autocomplete="identify_card" autofocus>
+                                <input id="identify_card" type="number" placeholder="12345" class="form-control @error('identify_card') is-invalid @enderror" name="identify_card" value="{{ old('identify_card') }}" required autocomplete="identify_card" autofocus>
 
                                 @error('identify_card')
                                     <span class="invalid-feedback" role="alert">
@@ -57,7 +57,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" placeholder="colegio@ejemplo.com" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -107,7 +107,7 @@
                             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="gender" type="text" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" required autocomplete="gender" autofocus>
+                                <input id="gender" type="text" placeholder="M / F" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" required autocomplete="gender" autofocus>
 
                                 @error('gender')
                                     <span class="invalid-feedback" role="alert">
@@ -121,7 +121,7 @@
                             <label for="cellular" class="col-md-4 col-form-label text-md-right">{{ __('Cellular:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cellular" type="number" class="form-control @error('cellular') is-invalid @enderror" name="cellular" value="{{ old('cellular') }}" required autocomplete="cellular" autofocus>
+                                <input id="cellular" type="number" placeholder="12345" class="form-control @error('cellular') is-invalid @enderror" name="cellular" value="{{ old('cellular') }}" required autocomplete="cellular" autofocus>
 
                                 @error('cellular')
                                     <span class="invalid-feedback" role="alert">

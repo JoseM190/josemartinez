@@ -130,8 +130,44 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => 'the name is required.',
+            'string' => 'the name has to be text.',
+            'max:50' => 'the name is too long.'
+        ],
+        'surname' => [
+            'required' => 'the surname is required.',
+            'string' => 'the surname has to be text.',
+            'max:50' => 'the surname is too long.'
+        ],
+        'identify_card' => [
+            'required' => 'the identify card is required.',
+            'integer' => 'the identity card must be numeric.'
+        ],
+        'email' => [
+            'required' => 'the email is required.',
+            'string' => 'the email has to be text.',
+            'email' => 'the email format is wrong.',
+            'max:255' => 'the email is too long.',
+            'unique:users' => 'the email already exists.'
+        ],
+        'password' => [
+            'required' => 'the password is required.',
+            'string' => 'the password has to be text.',
+            'min:8' => 'the password is too short.'
+        ],
+        'birthdate' => [
+            'required' => 'the birthdate is required.',
+            'date' => 'the date format is wrong.'
+        ],
+        'gender' => [
+            'required' => 'the gender is required.',
+            'string' => 'the gender has to be text.',
+            'max:2' => 'the gender is too long.'
+        ],
+        'cellular' => [
+            'required' => 'the cellular is required.',
+            'integer' => 'the cellular must be numeric.'
         ],
     ],
 

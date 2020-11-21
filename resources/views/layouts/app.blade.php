@@ -50,7 +50,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="registrar" class="nav-link" href="{{ route('formuser') }}" role="button">
+                                <a id="registrar" class="nav-link" href="#" role="button">
                                     Register Student
                                 </a>
                             </li>
