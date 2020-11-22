@@ -6,7 +6,7 @@
         <div class="col-md-15">
             <div class="card">
                 <div class="card-header text-center">{{ __('Student Record') }}</div><br>
-                <a class="btn btn-success col-md-2 offset-md-1" href="/create">
+                <a class="btn btn-success col-md-2 offset-md-1" href="{{ url('user/create') }}">
                     <i class="fas fa-user-plus"></i> Add Student
                 </a><br>
 
@@ -47,10 +47,10 @@
                                     <td>{{ $user->gender }}</td>
                                     <td>{{ $user->cellular }}</td>
                                     <td>
-                                        <a href="{{ route('edit', $user->id) }}" class="btn btn-primary mb-1">
+                                        <a href="{{ url('/user/'.$user->id.'/edit') }}" class="btn btn-primary mb-1">
                                             <i class="fas fa-user-edit"></i>
                                         </a>
-                                        <form action="{{ route('delete', $user->id) }}" method="POST">
+                                        <form action="{{ url('/user/'.$user->id) }}" method="POST">
                                             @csrf @method('DELETE')
                                             <button type="submit" onclick="return confirm('Are you sure to delete the student?');" class="btn btn-danger">
                                                 <i class="fas fa-user-minus"></i>
@@ -62,7 +62,7 @@
                         </tbody>
                     </table>
                     {{ $users->links() }}
-                    <a class="btn btn-link col-md-2" href="/home">
+                    <a class="btn btn-link col-md-2" href="{{ route('home') }}">
                         <i class="fas fa-reply"></i> Back to Top
                     </a>
                 </div>

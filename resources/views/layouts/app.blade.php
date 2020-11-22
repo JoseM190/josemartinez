@@ -51,7 +51,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="registrar" class="nav-link" href="/index" role="button">
+                                <a id="registrar" class="nav-link" href="{{ route('user.index') }}" role="button">
                                     Register Student
                                 </a>
                             </li>
